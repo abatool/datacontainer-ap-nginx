@@ -70,8 +70,8 @@ You can enter in the source directory and modify the index.html file to your pre
         "Source":"/var/lib/docker/volumes/36b2cff11525619d6b201680726
          3beca4d5964b1df8014e1da2cfb14f95e70be/_data",
          
-      **"Destination":** "/usr/share/nginx/html",
-          
+        "Destination":"/usr/share/nginx/html",
+         
         "Driver": "local",
         
          "Mode": "",
