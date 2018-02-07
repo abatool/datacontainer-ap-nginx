@@ -59,17 +59,17 @@ This command list all the information about the container to see the mounted vol
 ### For example
 
   "Mounts": [
-            {
-                "Type": "volume",
-                "Name": "36b2cff11525619d6b2016807263beca4d5964b1df8014e1da2cfb14f95e70be",
-             "Source":"/var/lib/docker/volumes/36b2cff11525619d6b201680726
+          **  {
+               *** "Type": "volume",
+              ***  "Name": "36b2cff11525619d6b2016807263beca4d5964b1df8014e1da2cfb14f95e70be",
+            *** "Source":"/var/lib/docker/volumes/36b2cff11525619d6b201680726
 3beca4d5964b1df8014e1da2cfb14f95e70be/_data",
-                "Destination": "/usr/share/nginx/html",
-                "Driver": "local",
-                "Mode": "",
-                "RW": true,
-                "Propagation": ""
-            },
+              ***  "Destination": "/usr/share/nginx/html",
+              ***  "Driver": "local",
+              ***  "Mode": "",
+               *** "RW": true,
+              ***  "Propagation": ""
+         **   },
 
 You can enter in the source directory and modify the index.html file to your preference.
 
