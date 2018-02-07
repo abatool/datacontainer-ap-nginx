@@ -58,21 +58,16 @@ This command list all the information about the container to see the mounted vol
 
 ### For example
 
-    
-
 You can enter in the source directory and modify the index.html file to your preference.
 
-
-## script
-
-You can run the following script first it's **"Mounts":** [
+ "Mounts": [
    
       {
         "Type": "volume",
        
         "Name": "36b2cff11525619d6b2016807263beca4d5964b1df8014e1da2cfb14f95e70be",
         
-      **"Source":**"/var/lib/docker/volumes/36b2cff11525619d6b201680726
+        "Source":"/var/lib/docker/volumes/36b2cff11525619d6b201680726
          3beca4d5964b1df8014e1da2cfb14f95e70be/_data",
          
       **"Destination":** "/usr/share/nginx/html",
@@ -86,7 +81,13 @@ You can run the following script first it's **"Mounts":** [
          "Propagation": ""
            
         },
-                ]create a network for the containers and a create datacontainer with this image (abatool1/datacontainer-ap-ngnix) which  maps the apache and nginx DocumentRoot  and also runs nginx and apache containers.
+   ]
+ ## Script
+You can enter in the source directory and see that there are all the **wordpress** configuration files now even if you delete your apache container the configuration files will be there and all you need to do is create apache container again and you will be able to use the **same wordpress** once again.
+                
+                
+## script
+You can run the following script to create a network for the containers and a create datacontainer with this image (abatool1/datacontainer-ap-ngnix) which maps the apache and nginx DocumentRoot and also runs nginx and apache containers.
 
 #/bin/bash
 
