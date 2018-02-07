@@ -82,7 +82,7 @@ You can enter in the source directory and modify the index.html file to your pre
            
         },
    ]
- ## Script
+   
 You can enter in the source directory and see that there are all the **wordpress** configuration files now even if you delete your apache container the configuration files will be there and all you need to do is create apache container again and you will be able to use the **same wordpress** once again.
                 
                 
