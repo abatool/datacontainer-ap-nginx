@@ -22,5 +22,5 @@ echo "--------------------------------------------------------------------------
 echo "----------Creating a nginx-based container called nginx with nginx image using volumes of the datacontainer.---------------"
 echo "------------------------------------------------------------------------------------------------------"
 
-docker run --network exnet2 --name nginx -d -p 8089:80 --volumes-from datacontainer nginx
+docker run --network exnet2 --name nginx -d -p 80:80 --volumes-from datacontainer nginx
 
