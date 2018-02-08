@@ -13,7 +13,7 @@ echo "--------------------------------------------------------------------------
 docker create --name datacontainer --network exnet2 abatool1/datacontainer-ap-ngnix
 
 echo "------------------------------------------------------------------------------------------------------"
-echo "----------Create an apache-based container called apache2 with image abatool1/httpd using volumes of the datacontainer---------------"
+echo "----------Create an apache-based container called apache2 with image abatool1/httpd-php using volumes of the datacontainer---------------"
 echo "------------------------------------------------------------------------------------------------------"
 
 docker run --network exnet2 --name apache2 -d -p 8080:80 --volumes-from datacontainer abatool1/httpd-php
