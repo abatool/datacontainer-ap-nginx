@@ -90,19 +90,19 @@ You can run the following script to create a network for the containers and a cr
 
 #Creation of a new network called exnet2.
 
-docker network create exnet2
+**docker network create exnet2**
 
 #Creating a container named datacontainer with the image abatool1/datacontainer-ap-ngnix which mapping volumes /var/www/html for apache and /usr/share/nginx/html for nginx.
 
-docker create --name datacontainer --network exnet2 abatool1/datacontainer-ap-ngnix
+**docker create --name datacontainer --network exnet2 abatool1/datacontainer-ap-ngnix**
 
 #Create an apache-based container called apache2 with image abatool1/httpd-php using datacontainer volumes.
 
-docker run --network exnet2 --name apache2 -d -p 8080:80 --volumes-from datacontainer abatool1/httpd-php
+**docker run --network exnet2 --name apache2 -d -p 8080:80 --volumes-from datacontainer abatool1/httpd-php**
 
 #Creating a nginx-based container called nginx with nginx image using datacontainer volumes.
 
-docker run --network exnet2 --name nginx -d -p 80:80 --volumes-from datacontainer nginx
+**docker run --network exnet2 --name nginx -d -p 80:80 --volumes-from datacontainer nginx**
 
 ### Authors
 **Author:** Arfa Batool (batoolarfa@gmail.com)
