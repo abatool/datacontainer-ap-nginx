@@ -13,7 +13,7 @@ You can use this repository to create data container witch will map on DocumentR
 
 ## Build from source
 
-$ docker build -t="abatool/datacontainer-apache-nginx" github.com/abatool/datacontainer-apache-nginx
+**$ docker build -t="abatool/datacontainer-apache-nginx" github.com/abatool/datacontainer-apache-nginx**
 
 Install the image from github.
 
@@ -23,17 +23,17 @@ $ docker pull abatool1/datacontainer-apache-nginx
 
 ### Prerequisites 
 
-$ docker network create exnet2 
+**$ docker network create exnet2**
 
 First we need create a network that we will use while creating containers
 
-$ docker create --name datacontainer --network exnet2 abatool1/datacontainer-ap-nginx
+**$ docker create --name datacontainer --network exnet2 abatool1/datacontainer-ap-nginx**
 
 Then we create a container with this image.
 
 ## Docker run example:
 
-$ docker run -d --name apache2 -p 8080:80 --network exnet2 --volumes-from datacontainer abatool1/httpd-php
+**$ docker run -d --name apache2 -p 8080:80 --network exnet2 --volumes-from datacontainer abatool1/httpd-php**
 
 With this command we create an apache based container called apache2 with image abatool1/httpd-php (it’s an image of apache with php installed).  
 
@@ -43,22 +43,19 @@ We also use **-d** option for container to run in background and print container
 
 **Then you can hit http://localhost:8080 or http://host-ip:8080 in your browser**. 
 
-$ docker run -d --name nginx -p 80:80 --network exnet2 --volumes-from datacontainer nginx
+**$ docker run -d --name nginx -p 80:80 --network exnet2 --volumes-from datacontainer nginx**
 
-Now we have to create a nginx-based container called nginx mapping on port 8089 of the host machine using volumes of the datacontainer with nginx image.
+Now we have to create a nginx-based container called nginx mapping on port 80 of the host machine using volumes of the datacontainer with nginx image.
 
 **Then you can hit http://localhost:80 or http://host-ip:80 in your browser**.
 
-
 ## Docker inspect
 
-$ docker inspect datacontainer 
+**$ docker inspect datacontainer**
 
 This command list all the information about the container to see the mounted volumes we have go to the **Mounts** part and there we can see the source and the destination of a mounted volume.
 
 ### For example
-
-You can enter in the source directory and modify the index.html file to your preference.
 
  "Mounts": [
    
@@ -83,10 +80,10 @@ You can enter in the source directory and modify the index.html file to your pre
         },
    ]
    
-You can enter in the source directory and see that there are all the **wordpress** configuration files now even if you delete your apache container the configuration files will be there and all you need to do is create apache container again and you will be able to use the **same wordpress** once again.
+You can enter in the source directory and modify the index.html file to your preferences.
                 
                 
-## script
+## Script
 You can run the following script to create a network for the containers and a create datacontainer with this image (abatool1/datacontainer-ap-ngnix) which maps the apache and nginx DocumentRoot and also runs nginx and apache containers.
 
 #/bin/bash
@@ -107,9 +104,12 @@ docker run --network exnet2 --name apache2 -d -p 8080:80 --volumes-from datacont
 
 docker run --network exnet2 --name nginx -d -p 80:80 --volumes-from datacontainer nginx
 
-
-## Authors
-
+### Authors
 **Author:** Arfa Batool (batoolarfa@gmail.com)
+
+### Used images in the process
+**abatool1/httpd-php**
+**nginx**
+
 
 
